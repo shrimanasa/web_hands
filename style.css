@@ -1,0 +1,32 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    display: none; /* Hide the raw video, we draw it directly on canvas for better performance/sync */
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the whole screen */
+    transform: scaleX(-1); /* Mirror effect so it acts like a mirror */
+}
