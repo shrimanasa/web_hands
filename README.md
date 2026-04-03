@@ -1,33 +1,54 @@
-# Neon Web Hands
+<div align="center">
+  
+# Interactive AI Hand Tracking Mesh
 
-This project is a real-time web-based interactive visualizer that tracks your hands using your webcam and creates dynamic "string art" or "laser webs" between your fingers. It utilizes Google's MediaPipe model directly inside the browser for zero-latency, private, client-side AI processing.
+[![MediaPipe](https://img.shields.io/badge/MediaPipe-Tasks_Vision-blue.svg)](https://developers.google.com/mediapipe)
+[![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![HTML5 Canvas](https://img.shields.io/badge/HTML5-Canvas-orange.svg)](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
 
-## Visual Effect
-- When **one hand** is detected, it draws a complex geometric mesh between your fingers.
-- When **two hands** are detected, it connects the joints of your left hand to the joints of your right hand, creating a laser web effect between them.
-- Uses glowing HSL neon colors: Pink, Yellow, Blue, and Green.
+A real-time, browser-based interactive visualizer that tracks your hands using your webcam and generates dynamic, neon geometric meshes between your fingers. 
 
-## Structure
+</div>
 
-```
-neon-web-hands/
-│
-├── index.html       # The main HTML structure (contains the video and canvas)
+---
+
+## 🌟 Live Demo
+
+> **Note to self/contributor:** Insert a video/GIF or screenshot of the working application here! 
+> *(Example: `![Hand Tracking Demo](path/to/demo.gif)`)*
+
+## 🧠 What it is
+
+This project utilizes Google's **MediaPipe** machine learning models directly inside the browser. It tracks 21 3D landmarks per hand in real-time with zero server latency (everything runs client-side), and uses the HTML5 `<canvas>` API to render a custom graphic effect rather than a standard skeletal overlay.
+
+## ✨ Features
+
+- **Intra-hand Mesh:** When one hand is detected, a complex 3D wireframe mesh connects your individual finger joints.
+- **Inter-hand Laser Web:** When two hands are detected, the system draws connections spanning from the joints of the left hand to the right hand, creating a dynamic web.
+- **Holographic Neon Rendering:** Uses high-performance Canvas compositing (`lighter` blending mode) to literally glow when lines overlap, mapped to a cyberpunk neon color palette (Pink, Yellow, Cyan, Green).
+- **Privacy First:** 100% of the AI processing happens locally on your machine. No video data is ever sent to a server.
+
+## 📁 Directory Structure
+
+```text
+├── index.html       # The main entry point (video frame & canvas overlay)
 ├── css/
 │   └── style.css    # Full-screen responsive layout and dark theme
-├── js/
-│   └── main.js      # The hand-tracking logic, webcam streaming, and custom renderer
-└── README.md
+└── js/
+    └── main.js      # MediaPipe initialization, tracking logic, and rendering engine
 ```
 
-## How to Run Locally
+## 🚀 How to Run Locally
 
-You don't need NodeJS or NPM since this runs in the browser via CDN! If you have Python installed, you can simply serve the directory.
+Because this project uses vanilla web technologies and loads MediaPipe via a CDN, there is no complicated build step required. 
 
-1. Open a terminal in the root directory.
-2. Run a local web server, for example:
+1. Clone this repository locally:
+   ```bash
+   git clone https://github.com/shrimanasa/web_hands.git
+   ```
+2. Open the directory in your terminal and serve it using any local web server. For example, using Python:
    ```bash
    python -m http.server 8000
    ```
-3. Navigate to `http://localhost:8000` in your web browser.
-4. Allow webcam access when prompted!
+3. Open `http://localhost:8000` in your browser.
+4. Accept the camera permissions when prompted.
