@@ -12,10 +12,6 @@ A real-time, browser-based interactive visualizer that tracks your hands using y
 
 ---
 
-## 🌟 Live Demo
-
-> **Note to self/contributor:** Insert a video/GIF or screenshot of the working application here! 
-> *(Example: `![Hand Tracking Demo](path/to/demo.gif)`)*
 
 ## 🧠 What it is
 
